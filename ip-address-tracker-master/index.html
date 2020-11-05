@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/icon-location.svg">
+  
+  <title> IP Address Tracker </title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+</head>
+<body>
+    <header>
+      <h1>IP Address Tracker</h1>
+      <div class="input-group">
+        <input type="search" id="searchInput" placeholder="Search for any IP address or domain">
+        <button id="search-ip"><img src="./images/icon-arrow.svg" alt="arrow icon"> </button> 
+      </div>      
+    </header>
+    <section class="address-details-section">
+      <div class="ip-address-container address-item">
+          <small>IP address</small>
+          <p id="ip-address"><i>loading...</i></p>
+      </div>
+      <div class="location-container address-item">
+          <small>Location</small>
+          <p id="location-details"><i>loading...</i></p>
+      </div>
+      <div class="timezone-container address-item">
+          <small>Timezone</small>
+          <p id="timezone"><i>loading...</i></p>
+      </div>
+      <div class="isp-container address-item">
+          <small>ISP</small>
+          <p id="isp"><i>loading...</i></p>
+      </div>  
+    </section>
+
+   
+
+  IP Address
+  Location
+  Timezone
+    UTC <!-- add offset value dynamically using the API -->
+  ISP
+  
+
+ <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+ integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+ crossorigin=""></script>
+ <script src="app.js"></script>
+</body>
+</html>

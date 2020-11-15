@@ -50,7 +50,7 @@ const errorMessage = document.querySelector('.error-message')
     }
 
     // EVENT LISTENERS
-    searchInput.addEventListener('submit', searchIp);
+    searchInput.addEventListener('search', searchIp);
     searchIpAddress.addEventListener('click', searchIp);
 
     function searchIp(e){        

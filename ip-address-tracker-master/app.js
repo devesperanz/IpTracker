@@ -58,9 +58,9 @@ const errorMessage = document.querySelector('.error-message')
         if(searchInput.value == ''){
             errorMessage.textContent = '*error'      
         }else{
-            errorMessage.textContent = ''             
-        }   
-        findAddress()   
+            errorMessage.textContent = ''  
+            findAddress()              
+        }           
         e.preventDefault()
     }  
     findAddress()   

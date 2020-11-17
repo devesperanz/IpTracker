@@ -10,12 +10,13 @@ const errorMessage = document.querySelector('.error-message')
   //MAP INIT
     let displayMap = (lat,lng) =>{       
         let container = L.DomUtil.get('mapItem', {
-            zoomControl: true,
+            zoomControl: false,
+            zoom : 30
         })
         if (container != null) {
             container._leaflet_id = null;
         }
-        let mymap = L.map('mapItem').setView([lat,lng], 13);
+        let mymap = L.map('mapItem').setView([lat,lng], 16);
         mymap.zoomControl.setPosition('bottomright');
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>'
@@ -23,15 +24,15 @@ const errorMessage = document.querySelector('.error-message')
         
         let myIcon = L.icon({
             iconUrl: './images/icon-location.svg',
-            iconAnchor: [lat, lng],
+            iconAnchor: [lat, lng]
         });
         let marker = L.marker([lat, lng], { icon: myIcon }).addTo(mymap);
     }
     
     //FETCHING THE IP, DOMAIN OR EMAIL ADDRESS
-    function findAddress(ip){ 
-        fetch(`https://geo.ipify.org/api/v1?apiKey=at_lNRHxoKFiAub0vZ3bCg4shBxoX6XE&ipAddress=${ip},
-                https://geo.ipify.org/api/v1?apiKey=at_lNRHxoKFiAub0vZ3bCg4shBxoX6XE&domain=${ip}`)
+    function findAddress(){
+        fetch(`https://geo.ipify.org/api/v1?apiKey=at_lNRHxoKFiAub0vZ3bCg4shBxoX6XE&ipAddress =${searchInput.value},
+                https://geo.ipify.org/api/v1?apiKey=at_lNRHxoKFiAub0vZ3bCg4shBxoX6XE&domain=${searchInput.value}`)
         .then((res)=> res.json())
         .then((data)=> {                
            if(data.code == 422 || data.code == 400){
@@ -57,9 +58,9 @@ const errorMessage = document.querySelector('.error-message')
         if(searchInput.value == ''){
             errorMessage.textContent = '*error'      
         }else{
-            errorMessage.textContent = '' 
-            findAddress(searchInput.value) 
+            errorMessage.textContent = ''             
         }   
-        findAddress(searchInput.value)   
+        findAddress()   
         e.preventDefault()
     }  
+    findAddress()   

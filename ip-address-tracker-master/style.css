@@ -18,12 +18,15 @@ header h1{
     font-weight:bold
 }
 .input-group{
-    margin-top: 25px;
+    margin-top: 20px;
+    width: 100%;
 }
+
 header input{
     border:none;
-    height:55px;
-    width:480px;
+    height:50px;
+    width: 40%;
+    max-width:100%;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     outline: transparent;
@@ -38,8 +41,8 @@ header input::placeholder{
 header button{
     border: none;
     background-color:black;
-    height:55px;
-    width:48px;
+    height:50px;
+    width:45px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     position: relative;
@@ -52,7 +55,7 @@ header button{
 .address-details-section{
     display: flex;
     justify-content: space-between;
-    width:73%;
+    width:60%;
     height: 25vh;
     margin:0 auto;
     border:none;
@@ -79,7 +82,7 @@ header button{
 
 .address-item p{    
     font-weight: 700;
-    font-size:25px;
+    font-size:20px;
     padding-top: 11px;
     color: hsl(0, 0%, 17%)
 }
@@ -103,3 +106,83 @@ header button{
     font-size: 18px;
     color: #fff;
 }
+
+/* MEDIA QUERY */
+@media(max-width: 980px){
+    .address-item p{    
+        font-weight: 700;
+        font-size:16px;
+        padding-top: 11px;
+        color: hsl(0, 0%, 17%)
+    }  
+    header input{
+        width: 60%;
+    }  
+    header input::placeholder{
+        font-size: 15px;
+        padding-left: 0px;
+    }   
+    .map-section .map-container{
+        height:65vh;
+        size: cover;
+    }
+    .address-details-section p{
+        font-size: 12px;
+        top:28%
+    }
+}
+
+@media(max-width: 730px){
+    .address-details-section p{
+        font-size: 13px;
+        top:28%
+    }
+    .error-message{
+        font-size:15px ;
+    }
+    
+}
+/* @media(max-width:990px){
+    .address-details-section{
+        width:90%;
+    }
+} */
+@media(max-width:600px){
+    .input-group{
+        margin-top: 10px;
+    }
+    header input{
+        width: 80%;
+    }
+    header input::placeholder{
+        font-size: 13px;
+    }
+    .address-details-section{
+        flex-direction: column;
+        top:26%;
+        height: 40vh;
+        width: 50%;
+        padding: 10px 10px;
+    }
+    .address-details-section .address-item{
+        border-left:none;
+        width:100%;
+        text-align: center;             
+    }
+    .address-item small {
+        font-size: 12px;
+        margin-top: 0px;
+    }
+    .address-details-section .address-item:last-of-type{
+        padding-bottom: 0px;
+    }
+
+    .leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar {
+        margin-top:280px !important;
+    }
+
+    .map-section .map-container{
+        height:65vh;
+        size: cover;
+    }
+} 
